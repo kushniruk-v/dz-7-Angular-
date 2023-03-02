@@ -1,0 +1,10 @@
+<div class="conteiner d-flex mt-3">
+  <div class="card ms-3" style="width: 18rem" *ngFor="let cardBlog of blogPage">
+    <img [src]="image" class="card-img-top" />
+    <div class="card-body">
+      <p class="text-primary">{{ cardBlog.author }}</p>
+      <h5 class="card-title">{{ cardBlog.title }}</h5>
+      <p class="card-text">{{ cardBlog.message }}</p>
+    </div>
+  </div>
+</div>

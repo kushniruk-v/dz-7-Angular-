@@ -1,0 +1,10 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Title 1",
+      "message": "Some text 1",
+      "author": "Vasyl"
+    }
+  ]
+}

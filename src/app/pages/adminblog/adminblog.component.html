@@ -1,0 +1,42 @@
+<div class="conteiner d-flex">
+    <div class="blogs">Blogs</div>
+    <div class=" mt-1  mx-5 col-9 " >
+   
+
+        <input [(ngModel)]="title"  class="form-control " type="text" placeholder="title here..." aria-label="default input example" >
+    
+        <div class="form-floating my-3">
+            <textarea [(ngModel)]="message"  class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">text here...</label>
+          </div>
+          <input [(ngModel)] ="author" class="form-control " type="text" placeholder="author here..." aria-label="default input example">
+          <button *ngIf="!editStatus"  [disabled]="!title || !message || !author"  type="button" class="btn btn-dark my-3" (click)="addBlog()">Add</button>
+          <button *ngIf="editStatus"  type="button" class="btn btn-outline-dark my-3" (click)=" saveBlog()">Save Edit</button>
+    </div>
+</div>
+
+<table class="table mt-1  w-50 ">
+    <thead >
+      <tr >
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Text</th>
+        <th scope="col">Author</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let blog of AdminBlogs" >
+        <th >{{blog.id}}</th>
+        <td>{{blog.title}}</td>
+        <td>{{blog.message}}</td>
+        <td>{{blog.author}}</td>
+        <td> <button type="button" class="btn btn-dark  mt-0 mb-0" (click)="editBlog(blog)">Edit</button></td>
+        <td> <button type="button" class="btn btn-dark  mt-0 mb-0" (click)=" deleteBlog(blog)">Delete</button></td>
+      </tr>
+      <tr>
+    
+    </tbody>
+  </table>
+
